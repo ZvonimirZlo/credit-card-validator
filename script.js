@@ -14,7 +14,7 @@ const formatInput = () => {
   const e = nums.slice(16);
 
   //formatting the input number
-  return `${a} ${b} ${c} ${d} ${e}`;
+  return `${a}  ${b}  ${c}  ${d}  ${e}`;
 }
 
 const formatter = () => {
