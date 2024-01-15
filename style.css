@@ -28,7 +28,7 @@ body{
 
 .container {
     border: 1px solid black;
-    width: 670px;
+    width: 600px;
     height: 380px;
     border-radius: 20px;
     background: url(images/map.png) center/cover no-repeat, radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(61,20,126,1) 35%, rgb(31, 116, 133) 100%);
@@ -54,6 +54,7 @@ input {
 .container .chip {
     width: 90px;
     height: 70px;
+    margin-top: 30px;
 } 
 
 span {
