@@ -23,9 +23,9 @@ const formatInput = () => {
   }
 
 //displays result on the screen
-btn.addEventListener('click', () => {
-   let text = document.createElement('h1');
-   text.innerHTML = inputField.value;
-    result.appendChild(text);
-}
-)
+// btn.addEventListener('click', () => {
+//    let text = document.createElement('h1');
+//    text.innerHTML = inputField.value;
+//     result.appendChild(text);
+// }
+// )
