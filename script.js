@@ -25,7 +25,7 @@ const formatter = () => {
 // displays result on the screen
 btn.addEventListener('click', () => {
   let text = document.createElement('h1');
-  text.innerHTML = inputField.value;
+  text.innerHTML = 'Your card is Master Card and it\'s valid!';
   result.appendChild(text);
 }
 )
