@@ -7,14 +7,14 @@ const formatInput = () => {
   const nums = inputField.value.toString().replace(/[^\d]/g, '');
 
   //slices the string in to pieces to form card number
-  const a = nums.slice(0, 4);
-  const b = nums.slice(4, 8);
-  const c = nums.slice(8, 12)
-  const d = nums.slice(12, 16);
-  const e = nums.slice(16, 19);
+  const partOne = nums.slice(0, 4);
+  const partTwo = nums.slice(4, 8);
+  const partThree = nums.slice(8, 12)
+  const partFour = nums.slice(12, 16);
+  const partFive = nums.slice(16, 19);
 
   //formatting the input number
-  return `${a}  ${b}  ${c}  ${d}  ${e}`;
+  return `${partOne}  ${partTwo}  ${partThree}  ${partFour}  ${partFive}`;
 }
 
 const formatter = () => {
