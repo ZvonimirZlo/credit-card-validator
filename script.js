@@ -11,7 +11,7 @@ const formatInput = () => {
   const b = nums.slice(4, 8);
   const c = nums.slice(8, 12)
   const d = nums.slice(12, 16);
-  const e = nums.slice(16);
+  const e = nums.slice(16, 19);
 
   //formatting the input number
   return `${a}  ${b}  ${c}  ${d}  ${e}`;
@@ -29,3 +29,4 @@ btn.addEventListener('click', () => {
   result.appendChild(text);
 }
 )
+

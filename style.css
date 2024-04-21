@@ -32,7 +32,8 @@ body{
     height: 380px;
     border-radius: 20px;
     background: url(images/bg.jpg) center/cover no-repeat, radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(61,20,126,1) 35%, rgb(31, 116, 133) 100%);
-
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255, 255, 255, 0.1));
+    box-shadow: 1px 1px 15px 1px rgb(91, 39, 116);
 } 
 
 button{
@@ -60,8 +61,6 @@ input {
     overflow: hidden;
 
 } 
-
-
 
 span {
     color: white;
