@@ -1,6 +1,8 @@
  :root {
      --bodyBackground: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgb(12, 12, 92) 35%, rgb(64, 37, 77) 100%);
      --boxShadow: 1px 1px 15px 1px rgb(91, 39, 116);
+     --valid-color:#00ff00;
+     --invalid-color:#ff0000;
  }
 
  * {
@@ -127,16 +129,16 @@
      position: absolute;
      top: 0;
      padding: 1rem;
-     margin: 6rem;
+     margin: 2rem;
      border-radius: 10px;
  }
 
  .result-container .valid {
-    color: lime;
+    color: var(--valid-color);
  }
 
  .result-container .invalid {
-    color: red;
+    color: var(--invalid-color);
  }
 
  .footer {
