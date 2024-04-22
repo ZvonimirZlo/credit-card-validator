@@ -13,7 +13,7 @@ const formatInput = () => {
   const partFour = nums.slice(12, 16);
   const partFive = nums.slice(16, 19);
 
-  //formatting the input number
+  //input number form
   return `${partOne}  ${partTwo}  ${partThree}  ${partFour}  ${partFive}`;
 }
 
@@ -21,6 +21,9 @@ const formatter = () => {
   const formattedInput = formatInput(inputField.value);
   inputField.value = formattedInput;
 }
+
+// formatting input number
+inputField.oninput = formatter;
 
 // displays result on the screen
 btn.addEventListener('click', () => {

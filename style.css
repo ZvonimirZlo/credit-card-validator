@@ -27,12 +27,15 @@
      flex-direction: column;
  }
 
+ /* Master Card logo */
  .container .master {
      width: 120px;
      float: right;
      margin: .7rem 1rem;
  }
 
+ 
+ /* card body */
  .container {
      border: 1px solid black;
      width: 600px;
@@ -47,6 +50,7 @@
      animation-fill-mode: forwards;
  }
 
+ /* ease-in animation */
  @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -63,7 +67,13 @@
      padding: 20px;
  }
 
+ .container .chip:hover {
+    box-shadow: var(--boxShadow);
+    scale: 1.1;
+ }
 
+
+ /* input field */
  input {
      width: 99%;
      font-size: 28px;
