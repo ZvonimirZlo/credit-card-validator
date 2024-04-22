@@ -71,6 +71,8 @@
      font-family: 'Credit Card', sans-serif;
      text-align: center;
      margin-left: 2px;
+     border: 1px solid white;
+     border-radius:10px ;
  }
 
  .container .chip {
@@ -103,7 +105,7 @@
      font-family: 'Courier New', Courier, monospace;
  }
 
- .valid {
+ .valid-thru {
      font-size: 20px;
      font-family: 'Credit Card', sans-serif;
  }
@@ -113,20 +115,28 @@
      padding: 0px;
  }
 
- .valid,
+ .valid-thru,
  p {
      margin-top: 10px;
  }
 
  .result-container {
-     color: white;
      font-family: Verdana, Geneva, Tahoma, sans-serif;
-     font-weight: lighter;
-     margin: 20px;
+     font-weight: bold;
+     font-size: 20px;
      position: absolute;
      top: 0;
      padding: 1rem;
      margin: 6rem;
+     border-radius: 10px;
+ }
+
+ .result-container .valid {
+    color: lime;
+ }
+
+ .result-container .invalid {
+    color: red;
  }
 
  .footer {
@@ -138,4 +148,7 @@
      width: 100%;
      height: 2.5rem;
  }
+
+
+
 

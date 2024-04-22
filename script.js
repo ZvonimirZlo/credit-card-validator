@@ -24,9 +24,15 @@ const formatter = () => {
 
 // displays result on the screen
 btn.addEventListener('click', () => {
-  let text = document.createElement('h1');
-  text.innerHTML = 'Your card is Master Card and it\'s valid!';
-  result.appendChild(text);
+ if(inputField.value){
+  result.innerHTML = `<p class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number.</p>`
+ }else{
+  result.innerHTML = `<p class="invalid">X Invalid input, enter full card number.</p>`
+ }
+
+
+  
 }
 )
+
 
