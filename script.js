@@ -28,46 +28,44 @@ inputField.oninput = handleInput;
 
 // checks card brand
 const handleBrand = () => {
- if(inputField.value.startsWith('34') || inputField.value.startsWith('37')) {
-  return 'American Express';
- }else if(inputField.value.startsWith('300') || inputField.value.startsWith('301') || inputField.value.startsWith('302') || inputField.value.startsWith('303') || inputField.value.startsWith('304') || inputField.value.startsWith('305')){
-  return 'Diners Club - Carte Blanche';
- }else if(inputField.value.startsWith('36') || inputField.value.startsWith('38') || inputField.value.startsWith('39')){
-  return 'Diners Club - International';
- }else if(inputField.value.startsWith('60') || inputField.value.startsWith('62') || inputField.value.startsWith('64') || inputField.value.startsWith('65')){
-  return 'Discover';
- }else if(inputField.value.startsWith('637') || inputField.value.startsWith('638') || inputField.value.startsWith('639')){
-  return 'InstaPayment';
- }else if(inputField.value.startsWith('35')){
-  return 'JCB';
- }else if(inputField.value.startsWith('50') || inputField.value.startsWith('58') || inputField.value.startsWith('63') || inputField.value.startsWith('67')) {
-  return 'Maestro';
- }else if(inputField.value.startsWith('51') || inputField.value.startsWith('52') || inputField.value.startsWith('53') || inputField.value.startsWith('54') || inputField.value.startsWith('55') || inputField.value.startsWith('22') || inputField.value.startsWith('23') || inputField.value.startsWith('24') || inputField.value.startsWith('25') || inputField.value.startsWith('26') || inputField.value.startsWith('27')){
-  return 'MasterCard';
- }else if(inputField.value.startsWith('4')){
-  return 'Visa';
-}else{
-  return 'Unknown card brand';
+  if (inputField.value.startsWith('34') || inputField.value.startsWith('37')) {
+    return 'American Express';
+  } else if (inputField.value.startsWith('300') || inputField.value.startsWith('301') || inputField.value.startsWith('302') || inputField.value.startsWith('303') || inputField.value.startsWith('304') || inputField.value.startsWith('305')) {
+    return 'Diners Club - Carte Blanche';
+  } else if (inputField.value.startsWith('36') || inputField.value.startsWith('38') || inputField.value.startsWith('39')) {
+    return 'Diners Club - International';
+  } else if (inputField.value.startsWith('60') || inputField.value.startsWith('62') || inputField.value.startsWith('64') || inputField.value.startsWith('65')) {
+    return 'Discover';
+  } else if (inputField.value.startsWith('637') || inputField.value.startsWith('638') || inputField.value.startsWith('639')) {
+    return 'InstaPayment';
+  } else if (inputField.value.startsWith('35')) {
+    return 'JCB';
+  } else if (inputField.value.startsWith('50') || inputField.value.startsWith('58') || inputField.value.startsWith('63') || inputField.value.startsWith('67')) {
+    return 'Maestro';
+  } else if (inputField.value.startsWith('51') || inputField.value.startsWith('52') || inputField.value.startsWith('53') || inputField.value.startsWith('54') || inputField.value.startsWith('55') || inputField.value.startsWith('22') || inputField.value.startsWith('23') || inputField.value.startsWith('24') || inputField.value.startsWith('25') || inputField.value.startsWith('26') || inputField.value.startsWith('27')) {
+    return 'MasterCard';
+  } else if (inputField.value.startsWith('4')) {
+    return 'Visa';
+  } else {
+    return 'Unknown card brand';
+  }
 }
-}
-
-
 
 // displays result on the screen
 btn.addEventListener('click', () => {
   if (inputField.value.length >= 13 + 8) {
     result.innerHTML = `<h5 class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number.</h4><br>
-                      <p class='valid'>  √   The card has a correct length.</p>
-                      <p class="valid">  √   The card has a valid checksum.<p>
-                      <p class="valid">  √   The card brand code (${handleBrand()}) is valid.</p>`
+                      <p class='valid'>  <i>√</i>   The card has a correct length</p>
+                      <p class="valid">  <i>√</i>  The card has a valid checksum<p>
+                      <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>`
   } else {
-    result.innerHTML = `<h4 class="invalid">X Invalid input, enter full card number.</h4>`
+    result.innerHTML = `<h5 class="invalid"><i>X</i> Card number too short, enter full card number.</h5>`
   }
 }
 )
 
 
-    
+
 
 
 
