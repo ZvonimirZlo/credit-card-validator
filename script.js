@@ -59,7 +59,7 @@ btn.addEventListener('click', () => {
                       <p class="valid">  <i>√</i>  The card has a valid checksum<p>
                       <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>`
   } else {
-    result.innerHTML = `<h5 class="invalid"><i>X</i> Card number too short, enter full card number.</h5>`
+    result.innerHTML = `<h5 class="invalid">X Card number too short, enter full card number.</h5>`
   }
 }
 )
