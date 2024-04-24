@@ -51,6 +51,14 @@ const handleBrand = () => {
   }
 }
 
+// execute a function when the user presses 'Enter' on the keyboard
+inputField.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    btn.click();
+  }
+});
+
 // displays result on the screen
 btn.addEventListener('click', () => {
   if (inputField.value.length >= 13 + 8) {
@@ -63,6 +71,7 @@ btn.addEventListener('click', () => {
   }
 }
 )
+
 
 
 
