@@ -46,10 +46,39 @@ const handleBrand = () => {
     return 'MasterCard';
   } else if (inputField.value.startsWith('4')) {
     return 'Visa';
+  } else if (inputField.value.startsWith('604')) {
+    return 'UkrCard';
+  } else if (inputField.value.startsWith('353' || inputField.value.startsWith('356'))) {
+    return 'RuPay';
+  } else if (inputField.value.startsWith('636')) {
+    return 'InterPayment';
+  } else if (inputField.value.startsWith('5019') || inputField.value.startsWith('4571')) {
+    return 'Dankort';
+  } else if (inputField.value.startsWith('2200') || inputField.value.startsWith('2201') || inputField.value.startsWith('2202') || inputField.value.startsWith('2203') || inputField.value.startsWith('2204')) {
+    return 'Mir'
+  } else if (inputField.value.startsWith('2205')) {
+    return 'Borica';
+  } else if (inputField.value.startsWith('9792')) {
+    return 'Troy';
+  } else if (inputField.value.startsWith('1')) {
+    return 'UATP';
+  } else if (inputField.value.startsWith('8600') || inputField.value.startsWith('5614')) {
+    return 'UzCard';
+  } else if (inputField.value.startsWith('9860')) {
+    return 'Humo';
+  } else if (inputField.value.startsWith('1946')) {
+    return 'GPN';
+  } else if (inputField.value.startsWith('9704')) {
+    return 'Napas';
+  } else if (inputField.value.startsWith('3')) {
+   return 'China T-Union';
+  } else if (inputField.value.startsWith('6')) {
+    return 'China UnionPay';
   } else {
-    return 'Unknown card brand';
+    return 'Unknown Brand';
   }
-}
+} 
+
 
 // execute a function when the user presses 'Enter' on the keyboard
 inputField.addEventListener("keypress", (event) => {
