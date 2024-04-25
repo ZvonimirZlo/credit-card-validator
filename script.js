@@ -11,7 +11,7 @@ const formatInput = () => {
   const partTwo = nums.slice(4, 8);
   const partThree = nums.slice(8, 12)
   const partFour = nums.slice(12, 16);
-  const partFive = nums.slice(16, 19); // 19 is the maximum credit card number length
+  const partFive = nums.slice(16, 19); // 19 is the maximum possible credit card number length
 
   //input number form
   return `${partOne}  ${partTwo}  ${partThree}  ${partFour}  ${partFive}`;
@@ -30,7 +30,7 @@ inputField.oninput = handleInput;
 const handleBrand = () => {
   if (inputField.value.startsWith('34') || inputField.value.startsWith('37')) {
     return 'American Express';
-  } else if (inputField.value.startsWith('300') || inputField.value.startsWith('301') || inputField.value.startsWith('302') || inputField.value.startsWith('303') || inputField.value.startsWith('304') || inputField.value.startsWith('305')) {
+  } else if (inputField.value.startsWith('30')) {
     return 'Diners Club - Carte Blanche';
   } else if (inputField.value.startsWith('36') || inputField.value.startsWith('38') || inputField.value.startsWith('39')) {
     return 'Diners Club - International';
@@ -63,9 +63,9 @@ inputField.addEventListener("keypress", (event) => {
 btn.addEventListener('click', () => {
   if (inputField.value.length >= 13 + 8) {
     result.innerHTML = `<h5 class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number.</h4><br>
+                      <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>
                       <p class='valid'>  <i>√</i>   The card has a correct length</p>
-                      <p class="valid">  <i>√</i>  The card has a valid checksum<p>
-                      <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>`
+                      <p class="valid">  <i>√</i>  The card has a valid checksum<p>`
   } else {
     result.innerHTML = `<h5 class="invalid">X Card number too short, enter full card number.</h5>`
   }
