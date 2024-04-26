@@ -91,7 +91,7 @@ inputField.addEventListener("keypress", (event) => {
 //Luhn algorithm function
 const handleLuhnAlgo = () => {
 
-  //last number of the input
+  //last number of the input aka check digit
   const lastDigit = inputField.value
     .replace(/\s+/g, '')
     .split('')
@@ -112,17 +112,17 @@ const handleLuhnAlgo = () => {
   const finalArray = [checksumHandler, ...lastDigit];
   const calculatedOut = finalArray.reduce((a, b) => a + b, 0);
 
-  // checks if the card number length is correct, card brand and checksum
+  // checks if the card number length is correct, card brand and valid checksum and renders result on the screen
   if (inputField.value.length === 0) {
-    result.innerHTML = `<h5 class='invalid'>X Nothing to check, enter Credit Card/Debit Card Number<h5/>`
+    result.innerHTML = `<h5 class='invalid'>X Nothing to check, enter full Credit Card/Debit Card Number!<h5/>`
   } else if (inputField.value.length <= 13) {
-    result.innerHTML = `<h5 class='invalid'> X Are you kidding me? Card number too short!</h5>`
+    result.innerHTML = `<h5 class='invalid'> X Are you kidding me? Card number is too short!</h5>`
   } else if (inputField.value.length < 21) {
-    result.innerHTML = `<h5 class='invalid'>X Credit Card/Debit card number too short, enter full card number<h5/>`
+    result.innerHTML = `<h5 class='invalid'>X This Credit Card/Debit card number is too short, enter full card number!<h5/>`
   } else if (inputField.value.length >= 21 && calculatedOut % 10 !== 0) {
-    result.innerHTML = `<h5 class='invalid'>X ${inputField.value} is not valid Credit Card/Debit Card Number.</h5>`
-  } else if (inputField.value.length > 21 && calculatedOut % 10 === 0) {
-    result.innerHTML = `<h5 class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number.</h4><br>
+    result.innerHTML = `<h5 class='invalid'>X ${inputField.value} is not a valid Credit Card/Debit Card Number!</h5>`
+  } else if (inputField.value.length >= 21 && calculatedOut % 10 === 0) {
+    result.innerHTML = `<h5 class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number!</h4><br>
                             <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>
                             <p class='valid'>  <i>√</i>   The card has a correct length</p>
                             <p class="valid">  <i>√</i>  The card has a valid checksum<p>`
