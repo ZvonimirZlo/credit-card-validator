@@ -34,7 +34,7 @@ const handleBrand = () => {
     return 'Diners Club - Carte Blanche';
   } else if (inputField.value.startsWith('36') || inputField.value.startsWith('38') || inputField.value.startsWith('39')) {
     return 'Diners Club - International';
-  } else if (inputField.value.startsWith('60') || inputField.value.startsWith('62') || inputField.value.startsWith('64') || inputField.value.startsWith('65')) {
+  } else if (inputField.value.startsWith('6011') || inputField.value.startsWith('62') || inputField.value.startsWith('64') || inputField.value.startsWith('65')) {
     return 'Discover';
   } else if (inputField.value.startsWith('637') || inputField.value.startsWith('638') || inputField.value.startsWith('639')) {
     return 'InstaPayment';
@@ -71,13 +71,13 @@ const handleBrand = () => {
   } else if (inputField.value.startsWith('9704')) {
     return 'Napas';
   } else if (inputField.value.startsWith('3')) {
-   return 'China T-Union';
+    return 'China T-Union';
   } else if (inputField.value.startsWith('6')) {
     return 'China UnionPay';
   } else {
     return 'Unknown Brand';
   }
-} 
+}
 
 
 // execute a function when the user presses 'Enter' on the keyboard
@@ -88,18 +88,37 @@ inputField.addEventListener("keypress", (event) => {
   }
 });
 
-// displays result on the screen
-btn.addEventListener('click', () => {
-  if (inputField.value.length >= 13 + 8) {
-    result.innerHTML = `<h5 class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number.</h4><br>
-                      <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>
-                      <p class='valid'>  <i>√</i>   The card has a correct length</p>
-                      <p class="valid">  <i>√</i>  The card has a valid checksum<p>`
-  } else {
-    result.innerHTML = `<h5 class="invalid">X Card number too short, enter full card number.</h5>`
-  }
+
+const handleLuhnAlgo = () => {
+  const numberedInput = inputField.value
+    .replace(/\s+/g, '')
+    .split('')
+    .slice(0, -1)
+    .reverse()
+    .map(Number)
+    .map((num, idx) => idx % 2 === 0 ? num * 2 : num) 
+    .map(x => x > 9 ? x - 9 : x)
+    .reduce((a, b) => a + b, 0)
+  console.log(numberedInput);
 }
-)
+
+btn.onclick = handleLuhnAlgo;
+
+// displays result on the screen
+// btn.addEventListener('click', () => {
+//   if (inputField.value.length >= 13 + 8) {
+//     result.innerHTML = `<h5 class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number.</h4><br>
+//                       <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>
+//                       <p class='valid'>  <i>√</i>   The card has a correct length</p>
+//                       <p class="valid">  <i>√</i>  The card has a valid checksum<p>`
+//   } else {
+//     result.innerHTML = `<h5 class="invalid">X Card number too short, enter full card number.</h5>`
+//   }
+//   if(inputField.value.length < 13 + 8) {
+//     result.innerHTML = `<h5 class="invalid">X Card number too short, enter full card number.</h5>`;
+//   }
+// }
+// )
 
 
 
