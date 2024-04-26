@@ -90,16 +90,26 @@ inputField.addEventListener("keypress", (event) => {
 
 
 const handleLuhnAlgo = () => {
-  const numberedInput = inputField.value
+  const lastDigit = inputField.value
+    .replace(/\s+/g, '')
+    .split('').reverse()
+    .slice(0, 1)
+    .map(Number);
+
+  const checksumHandler = inputField.value
     .replace(/\s+/g, '')
     .split('')
     .slice(0, -1)
     .reverse()
     .map(Number)
-    .map((num, idx) => idx % 2 === 0 ? num * 2 : num) 
+    .map((num, idx) => idx % 2 === 0 ? num * 2 : num)
     .map(x => x > 9 ? x - 9 : x)
-    .reduce((a, b) => a + b, 0)
-  console.log(numberedInput);
+    .reduce((a, b) => a + b, 0);
+
+  const out = lastDigit.concat(checksumHandler);
+  const out1 = out.reduce((a, b) => a + b, 0);
+
+  console.log(out1);
 }
 
 btn.onclick = handleLuhnAlgo;
