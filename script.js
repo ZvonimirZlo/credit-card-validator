@@ -88,11 +88,14 @@ inputField.addEventListener("keypress", (event) => {
   }
 });
 
-
+//Luhn algorithm function
 const handleLuhnAlgo = () => {
+
+  //last number of the input
   const lastDigit = inputField.value
     .replace(/\s+/g, '')
-    .split('').reverse()
+    .split('')
+    .reverse()
     .slice(0, 1)
     .map(Number);
 
@@ -106,29 +109,31 @@ const handleLuhnAlgo = () => {
     .map(x => x > 9 ? x - 9 : x)
     .reduce((a, b) => a + b, 0);
 
-  const out = lastDigit.concat(checksumHandler);
-  const out1 = out.reduce((a, b) => a + b, 0);
+  const finalArray = [checksumHandler, ...lastDigit];
+  const calculatedOut = finalArray.reduce((a, b) => a + b, 0);
 
-  console.log(out1);
+  // checks if the card number length is correct, card brand and checksum
+  if (inputField.value.length === 0) {
+    result.innerHTML = `<h5 class='invalid'>X Nothing to check, enter Credit Card/Debit Card Number<h5/>`
+  } else if (inputField.value.length <= 13) {
+    result.innerHTML = `<h5 class='invalid'> X Are you kidding me? Card number too short!</h5>`
+  } else if (inputField.value.length < 21) {
+    result.innerHTML = `<h5 class='invalid'>X Credit Card/Debit card number too short, enter full card number<h5/>`
+  } else if (inputField.value.length >= 21 && calculatedOut % 10 !== 0) {
+    result.innerHTML = `<h5 class='invalid'>X ${inputField.value} is not valid Credit Card/Debit Card Number.</h5>`
+  } else if (inputField.value.length > 21 && calculatedOut % 10 === 0) {
+    result.innerHTML = `<h5 class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number.</h4><br>
+                            <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>
+                            <p class='valid'>  <i>√</i>   The card has a correct length</p>
+                            <p class="valid">  <i>√</i>  The card has a valid checksum<p>`
+  } else {
+    result.innerHTML = `<h5 class='invalid'>X ${inputField.value} is not valid Credit Card/Debit Card Number.</h5>`
+  }
 }
 
 btn.onclick = handleLuhnAlgo;
 
-// displays result on the screen
-// btn.addEventListener('click', () => {
-//   if (inputField.value.length >= 13 + 8) {
-//     result.innerHTML = `<h5 class="valid"> √ ${inputField.value} is a valid Credit Card/Debit Card Number.</h4><br>
-//                       <p class="valid">  <i>√</i>  The card brand code: <b>${handleBrand()}</b></p>
-//                       <p class='valid'>  <i>√</i>   The card has a correct length</p>
-//                       <p class="valid">  <i>√</i>  The card has a valid checksum<p>`
-//   } else {
-//     result.innerHTML = `<h5 class="invalid">X Card number too short, enter full card number.</h5>`
-//   }
-//   if(inputField.value.length < 13 + 8) {
-//     result.innerHTML = `<h5 class="invalid">X Card number too short, enter full card number.</h5>`;
-//   }
-// }
-// )
+
 
 
 
