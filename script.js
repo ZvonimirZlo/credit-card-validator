@@ -116,7 +116,7 @@ const handleLuhnAlgo = () => {
   if (inputField.value.length === 0) {
     result.innerHTML = `<h5 class='invalid'>X Nothing to check, enter full Credit Card/Debit Card Number!<h5/>`
   } else if (inputField.value.length <= 13) {
-    result.innerHTML = `<h5 class='invalid'> X Are you kidding me:) Card number is too short!</h5>`
+    result.innerHTML = `<h5 class='invalid'> X Card number too short or invalid input!</h5>`
   } else if (inputField.value.length < 21) {
     result.innerHTML = `<h5 class='invalid'>X This Credit Card/Debit card number is too short, enter full card number!<h5/>`
   } else if (inputField.value.length >= 21 && calculatedOut % 10 !== 0) {
