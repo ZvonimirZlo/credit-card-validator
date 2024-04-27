@@ -40,7 +40,7 @@
      width: 600px;
      height: 380px;
      border-radius: 20px;
-     background: url(images/bgsm.jpg) center no-repeat fixed;
+     background: url(images/bgcard.jpg) center no-repeat fixed;
      -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255, 255, 255, 0.1));
      box-shadow: var(--boxShadow);
      margin-bottom: 20px;
