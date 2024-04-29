@@ -10,7 +10,7 @@
 
 ## About The App
 
-<h4>Live demo: <a href='https://credit-card-validator-z.netlify.app' target='_blank'>credit-card-validator-z.netlify.app</a></h4>
+<h4>Live demo: <a href='https://credit-card-validator-z.netlify.app' target="_blank">credit-card-validator-z.netlify.app</a></h4>
 
 Credit card validator web application, enter your credit/debit card number in the input field and press 'Enter' or click on the chip.
 This app uses Luhn algorithm to validate card number. The Luhn algorithm or Luhn formula, also known as the "modulus 10" or "mod 10" algorithm, named after its creator, IBM scientist Hans Peter Luhn, is a simple check digit formula used to validate a variety of identification numbers.
