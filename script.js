@@ -90,8 +90,7 @@ inputField.addEventListener("keypress", (event) => {
 
 //Luhn algorithm function
 const handleLuhnAlgo = () => {
-
-  //last number of the input aka check digit
+   //last number of the input aka check digit
   const lastDigit = inputField.value
     .replace(/\s+/g, '')
     .split('')
