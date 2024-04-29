@@ -43,7 +43,7 @@ How it works:
 
 ## Screenshots
 <p>
-<img src='https://github.com/ZvonimirZlo/bank-card-validator/assets/104101182/32fb7ea8-b75c-4c5f-beae-887740e4eade' width="400">
+<img src='https://github.com/ZvonimirZlo/credit-card-validator/assets/104101182/256b002e-265c-4d2e-a1b9-514b10890b31' width="400">
 </p>
 
 ## Technologies
