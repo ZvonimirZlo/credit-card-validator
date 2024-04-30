@@ -4,6 +4,8 @@ const container = document.getElementById('card');
 const result = document.getElementById('result');
 
 const formatInput = () => {
+
+  //allows only integer inputs
   const nums = inputField.value.toString().replace(/[^\d]/g, '');
 
   //slices the input value to pieces
@@ -92,7 +94,7 @@ inputField.addEventListener("keypress", (event) => {
 const handleLuhnAlgo = () => {
    //last number of the input aka check digit
   const lastDigit = inputField.value
-    .replace(/\s+/g, '')
+    .replace(/\s+/g, '') //removes whitespace
     .split('')
     .reverse()
     .slice(0, 1)
@@ -131,6 +133,7 @@ const handleLuhnAlgo = () => {
 }
 
 btn.onclick = handleLuhnAlgo;
+
 
 
 
