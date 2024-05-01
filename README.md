@@ -50,6 +50,7 @@ How it works:
 I've used `Css`, `Html`, `JavaScript` and `Tilt.js`.
 
 ## Setup
+- open live demo on the link above, or:
 - download or clone the repository
 - open it with Live Server
 
