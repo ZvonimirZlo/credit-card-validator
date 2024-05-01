@@ -12,7 +12,7 @@
 
 <h4>Live demo: <a href='https://credit-card-validator-z.netlify.app'>credit-card-validator-z.netlify.app</a></h4>
 
-Credit card validator web application, enter your credit/debit card number in the input field and press 'Enter' or click on the chip.
+Credit card validator web application. Enter your credit/debit card number in the input field and press 'Enter' or click on the `chip`.
 This app uses Luhn algorithm to validate card number. The Luhn algorithm or Luhn formula, also known as the "modulus 10" or "mod 10" algorithm, named after its creator, IBM scientist Hans Peter Luhn, is a simple check digit formula used to validate a variety of identification numbers.
 
 The Luhn algorithm is used in a variety of systems, including:
@@ -50,8 +50,8 @@ How it works:
 I've used `Css`, `Html`, `JavaScript` and `Tilt.js`.
 
 ## Setup
-- open live demo on the link above, or:
+- open live demo app on the link above, or:
 - download or clone the repository
-- open it with Live Server
+- open it with Live Server (or some other extension like Live Preview, it's up to you)
 
 
