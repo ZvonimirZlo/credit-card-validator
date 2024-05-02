@@ -1,6 +1,5 @@
-<h1>Credit Card Validator</h1>
+# Credit Card Validator
 <br>
-
 ## Table of Content:
 
 - [About The App](#about-the-app)
