@@ -1,5 +1,5 @@
 # Credit Card Validator
-<br>
+
 ## Table of Content:
 
 - [About The App](#about-the-app)
