@@ -1,8 +1,10 @@
+//Variables
 const inputField = document.getElementById('input');
 const btn = document.querySelector('button');
 const container = document.getElementById('card');
 const result = document.getElementById('result');
 
+//Input formatter function
 const formatInput = () => {
 
   //allows only integer inputs
