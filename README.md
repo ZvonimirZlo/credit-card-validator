@@ -1,4 +1,4 @@
-# Credit Card Validator
+# Credit Card Checker
 
 ## Table of Content:
 
