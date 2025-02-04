@@ -10,7 +10,7 @@ const formatInput = () => {
   //Ellows only integer inputs
   const nums = inputField.value.toString().replace(/[^\d]/g, '');
 
-  //slices the input value to pieces
+  //Slices the input value to pieces
   const partOne = nums.slice(0, 4);
   const partTwo = nums.slice(4, 8);
   const partThree = nums.slice(8, 12)
