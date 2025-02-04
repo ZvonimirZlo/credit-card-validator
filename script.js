@@ -7,7 +7,7 @@ const result = document.getElementById('result');
 //Input formatter function
 const formatInput = () => {
 
-  //allows only integer inputs
+  //Ellows only integer inputs
   const nums = inputField.value.toString().replace(/[^\d]/g, '');
 
   //slices the input value to pieces
@@ -17,20 +17,20 @@ const formatInput = () => {
   const partFour = nums.slice(12, 16);
   const partFive = nums.slice(16, 19); // 19 is the maximum possible credit card number length
 
-  //input number form
+  //Input number form
   return `${partOne}  ${partTwo}  ${partThree}  ${partFour}  ${partFive}`;
 }
 
-// input form handler
+// Input form handler
 const handleInput = () => {
   const formattedInput = formatInput(inputField.value);
   inputField.value = formattedInput;
 }
 
-// formatting input number
+// Formatting input number
 inputField.oninput = handleInput;
 
-// checks card brand
+// Checks card brand
 const handleBrand = () => {
   if (inputField.value.startsWith('34') || inputField.value.startsWith('37')) {
     return 'American Express';
@@ -84,7 +84,7 @@ const handleBrand = () => {
 }
 
 
-// execute a function when the user presses 'Enter' on the keyboard
+// Execute a function when the user presses 'Enter' on the keyboard
 inputField.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
@@ -115,7 +115,7 @@ const handleLuhnAlgo = () => {
   const finalArray = [checksumHandler, ...lastDigit];
   const calculatedOut = finalArray.reduce((a, b) => a + b, 0);
 
-  // checks if the card number length is correct, card brand and valid checksum and renders result on the screen
+  // Checks if the card number length is correct, card brand and valid checksum and renders result on the screen
   if (inputField.value.length === 0) {
     result.innerHTML = `<h5 class='invalid'>X Nothing to check, enter full Credit Card/Debit Card Number!<h5/>`
   } else if (inputField.value.length <= 13) {
